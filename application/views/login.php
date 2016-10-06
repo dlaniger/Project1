@@ -31,7 +31,6 @@
   </head>
 
   <body>
-  		-->{{test}}
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
@@ -46,7 +45,7 @@
 		        <div class="login-wrap">
 		        	<div id="alert-message" style="display: none;" class="alert alert-warning">Email and/or password incorrect!</div>
 		        	<div id="alert-change-s" style="display: none;" class="alert alert-success">Password successfully changed! You may now login.</div>
-		        	<div id="div_busy" align="center" style="display: none; height: 30px; margin-bottom: 20px;"><img src="img/busy.gif"/></div>
+		        	<div id="div_busy" align="center" style="display: none; height: 30px; margin-bottom: 20px;"><img src="<?php echo assets_url('img/busy.gif'); ?>"/></div>
 		            <input type="text" class="form-control" placeholder="Email" id="email" ng-model="login.email" autofocus>
 		            <br>
 		            <input ng-keyup="$event.keyCode == 13 && authenticateUser()" type="password" class="form-control" id="pass_key" ng-model="login.pass_key" placeholder="Password">
@@ -125,14 +124,14 @@
 				                          <!-- <div id="alert-signup" style="display: none;" class="alert alert-warning">Thank you for registering! An email containing your system generated password was sent to your email address.</div> -->
 				                          <input type="text" ng-model="signup.fullname" placeholder="Full name (e.g. John Appleseed)" class="form-control placeholder-no-fix" style="width: 350px; margin-bottom: 10px; margin-top: 20px;" ng-model="signup.fullname"/>
 				                          <input type="text" ng-model="signup.email" placeholder="Email address (e.g. someone@email.com)" class="form-control placeholder-no-fix" style="width: 350px; margin-bottom: 10px;" ng-model="signup.email"/>
-				                          <div class="captcha" style="margin-right: 10px;" align="center">{{capt}}</div><div style="display: inline-block; margin-bottom: 10px;" class="pointer" ng-click="reCaptcha()"><img src="img/re_cap.png"></div>
+				                          <div class="captcha" style="margin-right: 10px;" align="center">{{capt}}</div><div style="display: inline-block; margin-bottom: 10px;" class="pointer" ng-click="reCaptcha()"><img src="<?php echo assets_url('img/re_cap.png'); ?>"></div>
 				                          <input type="text" ng-model="signup.captcha" id="cap" placeholder="Type what you see in the box" class="form-control has-error" style="width: 210px; margin-bottom: 10px;" ng-model="signup.email"/>
 				                          <div style="display: inline-block; margin-bottom: 5px; display: none;" id="inv_cap"><font color="red">Invalid CAPTCHA!</font></div>
 				                          <br/>
 				                          &nbsp;<input type="checkbox">&nbsp;I agree to the <a href="#">privacy statement</a> of Tiki Trotter
 				                      <div class="modal-footer">
 				                          <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
-				                          <button class="btn btn-success" type="button" ng-click="createAccount()">Submit</button>&nbsp;<div id="busy-signup" style="display: none; width: 33px; height: 33px; float: right; padding: 2px;"><img src="img/busy.gif"/></div>
+				                          <button class="btn btn-success" type="button" ng-click="createAccount()">Submit</button>&nbsp;<div id="busy-signup" style="display: none; width: 33px; height: 33px; float: right; padding: 2px;"><img src="<?php echo assets_url('img/busy.gif'); ?>"/></div>
 				                      </div>
 			                      </div>
 				                  <div id="signup-done" style="display: none;">

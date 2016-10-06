@@ -8,7 +8,8 @@ class Dashboard extends CI_Controller {
 	}
 
 	function home() {
-		echo "HOME";
+		$data["main_content"] = "dashboard/home";
+		$this->load->view("layout/dashboard", $data);
 	}
 
 }

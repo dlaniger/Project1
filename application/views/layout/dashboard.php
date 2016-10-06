@@ -10,22 +10,22 @@
     <title>Tiki Trotter - Hotel Dashboard</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?=base_url()?>css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo assets_url('css/bootstrap.css'); ?>" rel="stylesheet">
     <!--external css-->
-    <link href="<?=base_url()?>font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="<?=base_url()?>js/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+    <link href="<?php echo assets_url('font-awesome/css/font-awesome.css'); ?>" rel="stylesheet" />
+    <link href="<?php echo assets_url('js/fullcalendar/bootstrap-fullcalendar.css'); ?>" rel="stylesheet" />
 
     <!-- Custom Tiki CSS -->
-    <link href="<?=base_url()?>css/tiki.css" rel="stylesheet">   
-    <link href="<?=base_url()?>lineicons/style.css" rel="stylesheet"> 
+    <link href="<?php echo assets_url('css/tiki.css'); ?>" rel="stylesheet">   
+    <link href="<?php echo assets_url('lineicons/style.css'); ?>" rel="stylesheet"> 
     
     <!-- Custom styles for this template -->
-    <link href="<?=base_url()?>css/style.css" rel="stylesheet">
-    <link href="<?=base_url()?>css/style-responsive.css" rel="stylesheet">
-    <link href="<?=base_url()?>bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet">
+    <link href="<?php echo assets_url('css/style.css'); ?>" rel="stylesheet">
+    <link href="<?php echo assets_url('css/style-responsive.css'); ?>" rel="stylesheet">
+    <link href="<?php echo assets_url('bootstrap-datepicker/css/bootstrap-datepicker.css'); ?>" rel="stylesheet">
 
-    <script src="<?=base_url()?>js/angular/angular.min.js" type="text/javascript"></script>
-    <script src="<?=base_url()?>js/controllers/app.js" type="text/javascript"></script>
+    <script src="<?php echo assets_url('js/angular/angular.min.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo assets_url('js/controllers/app.js'); ?>" type="text/javascript"></script>
 
   </head>
 
@@ -41,11 +41,11 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><img src="<?=base_url()?>/img/tiki_trotter_small.png" height="40" style="padding-left: 5px;"/></a>
+            <a href="index.html" class="logo"><img src="<?php echo assets_url('/img/tiki_trotter_small.png'); ?>" height="40" style="padding-left: 5px;"/></a>
             <!--logo end-->
             <div class="top-menu">
               <ul class="nav pull-right top-menu">
-                    <!-- <li><a class="logout" href="/dashboard/lock"><i class="li_lock"></i></a></li> -->
+                    <li><a class="logout" href="/dashboard/lock"><i class="li_lock"></i></a></li>
                     <li><a class="logout" href="/logout">Logout</a></li>
               </ul>
             </div>
@@ -62,14 +62,14 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-                  <p class="centered"><a href="profile.html"><img src="<?=base_url()?>img/tiki.png" class="img-circle" width="90"></a></p>
+                  <p class="centered"><a href="profile.html"><img src="<?php echo assets_url('img/tiki.png" class="img-circle'); ?>" width="90"></a></p>
                   <h5 class="centered">{{information.hotel_name}}</h5>
                   <div align="center">
                   <font color="#999" size="1px;">
                     You are logged in as<br/>
                   </font>
                   <font size="2px;" color="#fff">
-                    <?=$this->session->userdata("fullname")?>
+                    
                   </font>
                   </div>
                   <li class="mt">
@@ -130,26 +130,26 @@
       <!--main content end-->
       <!-- </div> -->
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="<?=base_url()?>js/jquery.js"></script>
-    <script src="<?=base_url()?>js/bootstrap.min.js"></script>
-    <script src="<?=base_url()?>js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script src="<?=base_url()?>js/jquery-1.9.1.min.js"></script>
+    <script src="<?php echo assets_url('js/jquery.js'); ?>"></script>
+    <script src="<?php echo assets_url('js/bootstrap.min.js'); ?>"></script>
+    <script src="<?php echo assets_url('js/jquery-ui-1.9.2.custom.min.js'); ?>"></script>
+    <script src="<?php echo assets_url('js/jquery-1.9.1.min.js'); ?>"></script>
     <script type="text/javascript">
     var j = $.noConflict(true);
     </script>
-    <script src="<?=base_url()?>js/fullcalendar/fullcalendar.min.js"></script>    
-    <script src="<?=base_url()?>/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>   
-    <script src="<?=base_url()?>js/jquery.ui.touch-punch.min.js"></script>
-    <script class="include" type="text/javascript" src="<?=base_url()?>js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="<?=base_url()?>js/jquery.scrollTo.min.js"></script>
-    <script src="<?=base_url()?>js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="<?php echo assets_url('js/fullcalendar/fullcalendar.min.js'); ?>"></script>    
+    <script src="<?php echo assets_url('/bootstrap-datepicker/js/bootstrap-datepicker.js'); ?>"></script>   
+    <script src="<?php echo assets_url('js/jquery.ui.touch-punch.min.js'); ?>"></script>
+    <script class="include" type="text/javascript" src="<?php echo assets_url('js/jquery.dcjqaccordion.2.7.js'); ?>"></script>
+    <script src="<?php echo assets_url('js/jquery.scrollTo.min.js'); ?>"></script>
+    <script src="<?php echo assets_url('js/jquery.nicescroll.js'); ?>" type="text/javascript"></script>
 
     <!--common script for all pages-->
-    <script src="<?=base_url()?>js/common-scripts.js"></script>
+    <script src="<?php echo assets_url('js/common-scripts.js'); ?>"></script>
 
     <!--script for this page-->
-    <script src="<?=base_url()?>js/calendar-conf-events.js"></script>    
-    <script src="<?=base_url()?>js/dashboard.js"></script>    
+    <script src="<?php echo assets_url('js/calendar-conf-events.js'); ?>"></script>    
+    <script src="<?php echo assets_url('js/dashboard.js'); ?>"></script>    
 
     <script>
       $('#checkin input').datepicker({
