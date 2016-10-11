@@ -53,4 +53,14 @@ class User_model extends CI_Model{
 		}
 		return $data;
 	}
+
+	function gen_captcha($length = 5) {
+	    $characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	    $charactersLength = strlen($characters);
+	    $randomString = null;
+	    for ($i = 0; $i < $length; $i++) {
+	        $randomString .= $characters[rand(0, $charactersLength - 1)];
+	    }
+	    return $data = str_replace("\"", "", $randomString);
+	}	
 }

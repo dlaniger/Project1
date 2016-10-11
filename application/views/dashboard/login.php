@@ -52,7 +52,6 @@
 		            <label class="checkbox">
 		                <span class="pull-right">
 		                    <a data-toggle="modal" href="login.html#myModal"> Forgot Password?</a>
-		
 		                </span>
 		            </label>
 		            <button class="btn btn-success btn-block" type="button" ng-click="authenticateUser()"><i class="fa fa-lock"></i> SIGN IN</button>
@@ -124,7 +123,7 @@
 				                          <!-- <div id="alert-signup" style="display: none;" class="alert alert-warning">Thank you for registering! An email containing your system generated password was sent to your email address.</div> -->
 				                          <input type="text" ng-model="signup.fullname" placeholder="Full name (e.g. John Appleseed)" class="form-control placeholder-no-fix" style="width: 350px; margin-bottom: 10px; margin-top: 20px;" ng-model="signup.fullname"/>
 				                          <input type="text" ng-model="signup.email" placeholder="Email address (e.g. someone@email.com)" class="form-control placeholder-no-fix" style="width: 350px; margin-bottom: 10px;" ng-model="signup.email"/>
-				                          <div class="captcha" style="margin-right: 10px;" align="center">{{capt}}</div><div style="display: inline-block; margin-bottom: 10px;" class="pointer" ng-click="reCaptcha()"><img src="<?= base_url() . 'public/img/re_cap.png'; ?>"></div>
+				                          <div class="captcha" style="margin-right: 10px;" align="center">{{capt}}</div><div style="display: inline-block; margin-bottom: 20px;" class="pointer" ng-click="reCaptcha()"><img src="<?= base_url() . 'public/img/re_cap.png'; ?>" style="margin-bottom: 8px;"></div>
 				                          <input type="text" ng-model="signup.captcha" id="cap" placeholder="Type what you see in the box" class="form-control has-error" style="width: 210px; margin-bottom: 10px;" ng-model="signup.email"/>
 				                          <div style="display: inline-block; margin-bottom: 5px; display: none;" id="inv_cap"><font color="red">Invalid CAPTCHA!</font></div>
 				                          <br/>

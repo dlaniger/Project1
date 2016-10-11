@@ -19,5 +19,10 @@ class User extends CI_Controller {
 				"pass_key" => $this->input->post("pass_key")
 			);
 		echo json_encode($this->User_model->get_user_auth($data));
+	}
+
+	function captcha() {
+		$this->load->model("User_model");
+		echo strtoupper($this->User_model->gen_captcha());
 	}	
 }

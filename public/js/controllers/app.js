@@ -1,10 +1,17 @@
 var app = angular.module("tikiTrotter", []);
-var url_prefix = "http://localhost";
+var url_prefix = "http://192.168.1.101";
 
 // USERS
 app.controller("userController", function($scope, $http, $window) {
 	
 	$scope.login = {};
+	$scope.capt = {};
+
+	// generate captcha
+    $http.get(url_prefix + "/user/captcha")
+    .success(function(response) {
+    	$scope.capt = response;
+    });	
 
 	$scope.authenticateUser = function() {
 		$("#div_busy").show();
@@ -15,16 +22,21 @@ app.controller("userController", function($scope, $http, $window) {
 		    data: $.param($scope.login)
 		}).success(function (data, response) {
 			if(data.response.code === 0) { 
-				/* user account does not exist */
 				$("#div_busy").hide();
 			}
 			else if(data.response.code === 1) { 
 				$("#div_busy").hide();
-				/* user account exist */
-				/* check wheter user account is verified (data.user_auth.acct_statu === 1) */
 			}
 		});		
-	}	
+	}
+
+    $scope.reCaptcha = function() {
+    	console.log()
+	    $http.get(url_prefix + "/user/captcha")
+	    .success(function(response) {
+	    	$scope.capt = response;
+	    });    	
+    }	
 });
 
 app.controller("dashboardController", function($scope, $http, $window) {
