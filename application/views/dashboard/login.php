@@ -38,7 +38,7 @@
 	  <div id="login-page">
 	  	<div class="container"><br/><br/>
 	  	<div align="center">
-	  		<img src="<?= base_url() . 'public/img/tiki_trotter_big.png'; ?>">
+	  		<img src="<?= base_url() . 'public/img/tiki_trotter_big.png'; ?>" height="100px;">
 	  	</div>
 		      <form class="form-login" action="/dashboard/main" method="post">
 		        <h2 class="form-login-heading"><strong>DASHBOARD LOGIN</strong></h2>
