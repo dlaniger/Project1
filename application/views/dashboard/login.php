@@ -124,15 +124,14 @@
 				                          <input type="text" ng-model="signup.firstname" placeholder="First name" class="form-control placeholder-no-fix" style="width: 350px; margin-bottom: 10px; margin-top: 20px;"/>
 				                          <input type="text" ng-model="signup.middlename" placeholder="Middle name" class="form-control placeholder-no-fix" style="width: 350px; margin-bottom: 10px;"/>
 				                          <input type="text" ng-model="signup.lastname" placeholder="Last name" class="form-control placeholder-no-fix" style="width: 350px; margin-bottom: 10px;"/>
-				                          <input type="text" ng-model="signup.email" placeholder="Email address (e.g. someone@email.com)" class="form-control placeholder-no-fix" style="width: 300px; margin-bottom: 10px;"/>
+				                          <input type="text" ng-model="signup.email" placeholder="Email address" class="form-control placeholder-no-fix" style="width: 300px; margin-bottom: 10px;"/>
 				                          <input type="text" ng-model="signup.contact1" placeholder="Telephone" class="form-control placeholder-no-fix" style="width: 210px; margin-bottom: 10px;"/>
 				                          <input type="text" ng-model="signup.contact2" placeholder="Mobile phone" class="form-control placeholder-no-fix" style="width: 210px; margin-bottom: 10px;"/>
 				                          <div class="captcha" style="margin-right: 10px;" align="center">{{capt}}</div><div style="display: inline-block; margin-bottom: 10px;" class="pointer" ng-click="reCaptcha()"><img src="<?= base_url() . 'public/img/re_cap.png'; ?>" style="margin-bottom: 8px;"></div>
 				                          <input type="text" ng-model="signup.captcha" id="cap" placeholder="Type what you see in the box" class="form-control has-error" style="width: 210px; margin-bottom: 10px;"/>
 				                          <div style="display: inline-block; margin-bottom: 5px; display: none;" id="inv_cap"><font color="red">Invalid CAPTCHA!</font></div>
-				                          <br/>
 				                          &nbsp;<input type="checkbox">&nbsp;I agree to the <a href="#">privacy statement</a> of Tiki Trotter
-				                      <div class="modal-footer">
+				                      <div class="modal-footer" style="margin-top: 20px;">
 				                          <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
 				                          <button class="btn btn-success" type="button" ng-click="signUp()">Submit</button>&nbsp;<div id="busy-signup" style="display: none; width: 33px; height: 33px; float: right; padding: 2px;"><img src="<?= base_url() . 'public/img/busy.gif'; ?>"/></div>
 				                      </div>

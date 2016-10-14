@@ -5,8 +5,7 @@
 */
 class User_model extends CI_Model{ 
 	
-	function __construct()
-	{
+	function __construct() {
 		parent::__construct();
 	}
 
@@ -62,5 +61,37 @@ class User_model extends CI_Model{
 	        $randomString .= $characters[rand(0, $charactersLength - 1)];
 	    }
 	    return $data = str_replace("\"", "", $randomString);
-	}	
+	}
+
+	function save_user_info($data) {
+		$insert = $this->db->insert('user_info', 
+			array(
+				'user_type' => $data['user_type'],
+				'firstname' => $data['firstname'],
+				'middlename' => $data['middlename'],
+				'lastname' => $data['lastname'],
+				'contact1' => $data['contact1'],
+				'contact2' => $data['contact2'],
+				'datecreated' => $data['datecreated']
+			));
+		$auth = array(
+				'user_id' => $this->db->insert_id(),
+				'acct_status' => 0,
+				'email' => $data['email']
+			);
+		$this->save_user_auth($auth);
+		return $insert;
+	}
+
+	function save_user_auth($data) {
+		error_log('DATA: ' . $data['user_id'] . ' ' . $data['acct_status'] . ' ' . $data['email']);
+		$insert = $this->db->insert('user_auth',
+				array(
+					'user_id' => $data['user_id'],
+					'acct_status' => $data['acct_status'],
+					'email' => $data['email']
+				)
+			);
+		return $insert;
+	}
 }
