@@ -1,11 +1,12 @@
 var app = angular.module("tikiTrotter", []);
-var url_prefix = "http://192.168.1.101";
+var url_prefix = "http://localhost";
 
 // USERS
 app.controller("userController", function($scope, $http, $window) {
 	
 	$scope.login = {};
 	$scope.capt = {};
+	$scope.signup = {};
 
 	// generate captcha
     $http.get(url_prefix + "/user/captcha")
@@ -36,7 +37,12 @@ app.controller("userController", function($scope, $http, $window) {
 	    .success(function(response) {
 	    	$scope.capt = response;
 	    });    	
-    }	
+    }
+
+    $scope.signUp = function() {
+    	console.log($scope.signup);
+    	$scope.signup = {};
+    }
 });
 
 app.controller("dashboardController", function($scope, $http, $window) {

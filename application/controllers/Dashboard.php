@@ -10,8 +10,9 @@ class Dashboard extends CI_Controller {
 	}
 
 	function index() {
-		$data['main_content'] = 'dashboard/landing';
-		$this->load->view('layout/db_layout', $data);
+		// $data['main_content'] = 'dashboard/landing';
+		// $this->load->view('layout/db_layout', $data);
+		$this->landing();
 	}
 
 	function landing() {
