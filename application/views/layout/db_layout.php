@@ -355,7 +355,7 @@
             <!-- /.navbar-static-side -->
         </nav>
         <!-- Page Content -->
-        <? $this->load->view($main_content); ?>
+        <?php $this->load->view($main_content); ?>
         <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->

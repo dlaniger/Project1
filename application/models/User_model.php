@@ -33,6 +33,10 @@ class User_model extends CI_Model{
 				$data['user_auth'] = $row;
 				$data['user_info'] = $this->get_user_info($row->user_id);
 			}
+
+
+			$this->session->set_userdata(array('user_id'=>$data['user_auth']->user_id));
+			$this->update_user_last_login($data['user_auth']->user_id);
 		}
 		else {
 			$data['response'] = array('code' => 0, 'msg' => 'User authentication not found');
@@ -53,14 +57,24 @@ class User_model extends CI_Model{
 		return $data;
 	}
 
+	function update_user_last_login($user_id) {
+		$fields=array(
+			'last_login'=> date('Y-m-d H:i:s')
+			);
+
+		$this->db->where('user_id', $user_id);
+		$this->db->update('user_auth', $fields);
+
+	}
+
 	function gen_captcha($length = 5) {
-	    $characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	    $charactersLength = strlen($characters);
-	    $randomString = null;
-	    for ($i = 0; $i < $length; $i++) {
-	        $randomString .= $characters[rand(0, $charactersLength - 1)];
-	    }
-	    return $data = str_replace("\"", "", $randomString);
+		$characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		$charactersLength = strlen($characters);
+		$randomString = null;
+		for ($i = 0; $i < $length; $i++) {
+			$randomString .= $characters[rand(0, $charactersLength - 1)];
+		}
+		return $data = str_replace("\"", "", $randomString);
 	}
 
 	function save_user_info($data) {
@@ -73,11 +87,11 @@ class User_model extends CI_Model{
 				'contact1' => $data['contact1'],
 				'contact2' => $data['contact2'],
 				'datecreated' => $data['datecreated']
-			));
+				));
 		$auth = array(
-				'user_id' => $this->db->insert_id(),
-				'acct_status' => 0,
-				'email' => $data['email']
+			'user_id' => $this->db->insert_id(),
+			'acct_status' => 0,
+			'email' => $data['email']
 			);
 		$this->save_user_auth($auth);
 		return $insert;
@@ -86,10 +100,10 @@ class User_model extends CI_Model{
 	function save_user_auth($data) {
 		error_log('DATA: ' . $data['user_id'] . ' ' . $data['acct_status'] . ' ' . $data['email']);
 		$insert = $this->db->insert('user_auth',
-				array(
-					'user_id' => $data['user_id'],
-					'acct_status' => $data['acct_status'],
-					'email' => $data['email']
+			array(
+				'user_id' => $data['user_id'],
+				'acct_status' => $data['acct_status'],
+				'email' => $data['email']
 				)
 			);
 		return $insert;

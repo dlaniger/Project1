@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
 * 
@@ -10,6 +10,7 @@ class Dashboard extends CI_Controller {
 	}
 
 	function index() {
+		//print_r($this->session->userdata());
 		// $data['main_content'] = 'dashboard/landing';
 		// $this->load->view('layout/db_layout', $data);
 		$this->landing();
