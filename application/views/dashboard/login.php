@@ -61,13 +61,38 @@
 		                    Create an account, it's really simple!
 		                    <!-- <span align="center"> -->
 		                    	<!-- OR -->
-		                    <!-- </span><br/> -->
-		                    <button class="btn btn-facebook" type="submit" style="width: 290px; margin-top: 10px;"><i class="fa fa-facebook"></i> Login with Facebook</button>
+		                    <!-- </span><br/> -->		                   
 		                </a>
+		                
+
+		                 <a href="" id="fblogin" ng-click="authenticate_fb_user()" class="btn btn-facebook" type="submit" style="width: 290px; margin-top: 10px;"><i class="fa fa-facebook"></i> Login with Facebook</a>
 		            </div>
 		
 		        </div>
 		
+		        <!--Facebook login modal-->
+		   <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="facebooklogin" class="modal fade">
+		              <div class="modal-dialog">
+		                  <div class="modal-content">
+		                      <div class="modal-header">
+		                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                          <h4 class="modal-title">Facebook Login</h4>
+		                      </div>
+		                      <div class="modal-body">
+		                      <label for="fb_username">Email : </label>
+		                         <input type="text" class="form-control" name="fb_username">
+		                         <label for="fb_password">Password :</label>
+		                         <input type="password" class="form-control" name="fb_password">
+		                      </div>
+		                      <div class="modal-footer">
+		                          <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
+		                          <button class="btn btn-theme" type="button">Submit</button>
+		                      </div>
+		                  </div>
+		              </div>
+		          </div>
+ <!--end Facebook login modal-->
+
 		          <!-- Modal -->
 		          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
 		              <div class="modal-dialog">

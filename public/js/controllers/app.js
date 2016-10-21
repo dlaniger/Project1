@@ -14,6 +14,23 @@ app.controller("userController", function($scope, $http, $window) {
 		$scope.capt = response;
 	});	
 
+
+$scope.authenticate_fb_user = function() { 
+	 $http.get(url_prefix + "/tiki-trotter/user/authenticate_fb_user").success(function (response) {
+
+     if(response.code == 0){     	
+     	window.location.href=response.data.authUrl;
+     	}else{
+     	
+    console.log(response);
+     		//window.location.href=url_prefix + "/tiki-trotter/dashboard"; 
+     	
+
+     	}
+  });
+}
+
+
 	$scope.authenticateUser = function() {
 		$("#div_busy").show();
 		$http({
